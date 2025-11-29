@@ -1,103 +1,64 @@
-# PAF-IAST-Policy-Advisor-RAG
+PAF IAST Policy Advisor RAG System
 
-🏛️ PAF-IAST Academic Compliance System (RAG Policy Advisor)
+🏛️ PAF IAST Academic Compliance System [RAG Based Policy Advisor]
 
-Project Overview
+This project is a deployment ready Retrieval Augmented Generation chatbot created for the Programming for Artificial Intelligence [COMP 212] final project. The system works as an instant guidance platform for all PAF IAST student academic policy related questions.
 
-This system is a sophisticated, deployment-ready Retrieval-Augmented Generation (RAG) chatbot developed for the Programming for Artificial Intelligence (COMP-212) final project. It is designed to serve as the official, instant guidance platform for all PAF-IAST student academic policy queries.
-
-The primary challenge it solves is extracting precise, verified facts from extensive, unstructured official university rulebooks (PDFs) that are often difficult for students to navigate. By transforming these complex documents into a structured, searchable knowledge base, the system ensures students receive accurate, contextual answers instantly.
+Its main purpose is to extract accurate and verified information from the official university rulebooks, which are usually large unstructured PDF documents. These documents are converted into a clean structured knowledge base so that students can receive correct and context aware answers immediately.
 
 🚀 Key Features and AI Implementation
-
-Feature
-
-Implementation Detail
-
-COMP-212 Link
-
-RAG Architecture
-
-Uses FAISS (Facebook AI Similarity Search) for high-speed vector retrieval, making the search engine fast and efficient on minimal hardware.
-
-Data Structures, NumPy, Streamlit
-
-Policy Ingestion
-
-Robust Python logic utilizing pypdf for data loading, regular expressions (re) for data cleaning (removing headers/footers), and langchain-text-splitters for logical chunking.
-
-Python Fundamentals, Data Cleaning
-
-AI Backend
-
-Integrates Google Gemini API for both high-precision Embeddings (text-embedding-004) and context-aware Generation (gemini-2.5-flash).
-
-AI/LLM Integration
-
-Scalability
-
-Designed with batch processing to efficiently vectorize large document sets, ensuring scalability if new policy documents are added.
-
-OOP Design Principles (Conceptual)
-
-Deployment
-
-Presented via a user-friendly, clean chat interface using Streamlit, making it ready for live deployment on the University's LMS or portal.
-
-Streamlit, Final Product Finishing
-
+Feature and Explanation
+Feature	Implementation Detail	COMP 212 Link
+RAG Architecture	Uses FAISS, Facebook AI Similarity Search, for fast vector based retrieval in low hardware environments	Data Structures, NumPy, Streamlit
+Policy Ingestion	Uses pypdf for PDF loading, re for cleaning, langchain text splitters for chunking	Python Fundamentals, Data Cleaning
+AI Backend	Uses Google Gemini API, text embedding 004 for embeddings, gemini 2.5 flash for generation	AI and LLM Integration
+Scalability	Batch vectorization logic supports very large documents	OOP based design understanding
+Deployment	User friendly chat interface built using Streamlit	Streamlit, final project finishing
 🛠️ Installation and Setup
 
-This guide covers setting up the application and configuring the API key locally.
+Follow these steps to install and run the application locally.
 
-1. Prerequisites
+1. Requirements
 
-You must have Python (3.10+) installed and an active Gemini API Key.
+You must have Python 3.10 or newer and a valid Gemini API Key.
 
-2. Project Files
+2. Required Project Files
 
-Ensure your repository contains these four critical files:
+Your repository must contain these four files.
 
-policy_bot_app.py (The main application code)
+policy_bot_app.py, the main application file
 
-requirements.txt (List of dependencies)
+requirements.txt
 
-policy_faiss_index.bin (The Vector Database, built in Jupyter)
+policy_faiss_index.bin
 
-policy_chunks.pkl (The original text segments)
+policy_chunks.pkl
+
+These last two files are created during the vectorization stage in Jupyter Notebook.
 
 3. Install Dependencies
 
-Install all necessary libraries using the provided requirements.txt file:
+Run this command in your terminal.
 
 pip install -r requirements.txt
 
+4. Configure the API Key [Secure Method]
 
-4. Configure API Key (Securely)
+Never upload your API key to GitHub.
 
-The API key must be configured in a secrets file, which should NOT be committed to GitHub for security reasons.
+Create a folder named .streamlit in your main project directory
 
-Create a folder named .streamlit in your project's root directory.
+Create a file inside it named secrets.toml
 
-Inside .streamlit, create a file named secrets.toml.
+Add the following lines inside that file
 
-Paste your Gemini API key inside this file in the following format:
+GEMINI_API_KEY = "YOUR_ACTUAL_GEMINI_API_KEY"
 
-# .streamlit/secrets.toml
-GEMINI_API_KEY = "YOUR_ACTUAL_GEMINI_API_KEY" 
+5. Run the Application
 
-
-5. Run the Application Locally
-
-Execute the Streamlit application from your terminal:
+Use the command below to start the interface.
 
 streamlit run policy_bot_app.py
 
 
-The application will launch in your browser, ready for testing.
-
-👩‍💻 Developer
-
-[Your Name] - [Your Student ID]
-
-Course: Programming for Artificial Intelligence (COMP-212)
+The browser will automatically open the chat based policy advisor.
