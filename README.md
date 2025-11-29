@@ -1,64 +1,78 @@
-PAF IAST Policy Advisor RAG System
+# PAF IAST Policy Advisor RAG System
 
-🏛️ PAF IAST Academic Compliance System [RAG Based Policy Advisor]
+🏛️ **PAF IAST Academic Compliance System, RAG Based Policy Advisor**
 
-This project is a deployment ready Retrieval Augmented Generation chatbot created for the Programming for Artificial Intelligence [COMP 212] final project. The system works as an instant guidance platform for all PAF IAST student academic policy related questions.
+This project is a deployment ready Retrieval Augmented Generation chatbot created for the Programming for Artificial Intelligence [COMP 212] final project. It provides instant, accurate and verified answers to student academic policy questions by converting large unstructured university rulebooks into a clean searchable knowledge base.
 
-Its main purpose is to extract accurate and verified information from the official university rulebooks, which are usually large unstructured PDF documents. These documents are converted into a clean structured knowledge base so that students can receive correct and context aware answers immediately.
+---
 
-🚀 Key Features and AI Implementation
-Feature and Explanation
-Feature	Implementation Detail	COMP 212 Link
-RAG Architecture	Uses FAISS, Facebook AI Similarity Search, for fast vector based retrieval in low hardware environments	Data Structures, NumPy, Streamlit
-Policy Ingestion	Uses pypdf for PDF loading, re for cleaning, langchain text splitters for chunking	Python Fundamentals, Data Cleaning
-AI Backend	Uses Google Gemini API, text embedding 004 for embeddings, gemini 2.5 flash for generation	AI and LLM Integration
-Scalability	Batch vectorization logic supports very large documents	OOP based design understanding
-Deployment	User friendly chat interface built using Streamlit	Streamlit, final project finishing
-🛠️ Installation and Setup
+## 🚀 Key Features and AI Implementation
 
-Follow these steps to install and run the application locally.
+### System Breakdown
 
-1. Requirements
+| Feature          | Implementation Detail                                                                      | Relevant COMP 212 Topic           |
+| ---------------- | ------------------------------------------------------------------------------------------ | --------------------------------- |
+| RAG Architecture | Uses FAISS, Facebook AI Similarity Search, for fast vector retrieval                       | Data Structures, NumPy, Streamlit |
+| Policy Ingestion | Uses pypdf for PDF extraction, re for data cleaning, langchain text splitters for chunking | Python Basics, Data Cleaning      |
+| AI Backend       | Uses Google Gemini API, text embedding 004 for embeddings, gemini 2.5 flash for generation | AI and LLM Integration            |
+| Scalability      | Batch vectorization supports large document sets                                           | OOP Concepts                      |
+| Deployment       | Streamlit based chat interface for smooth user experience                                  | Streamlit Development             |
 
-You must have Python 3.10 or newer and a valid Gemini API Key.
+---
 
-2. Required Project Files
+## 🛠️ Installation and Setup
 
-Your repository must contain these four files.
+Follow these steps to run the system locally.
 
-policy_bot_app.py, the main application file
+### 1. Requirements
 
-requirements.txt
+You need Python 3.10 or higher and a valid Gemini API key.
 
-policy_faiss_index.bin
+### 2. Project Files
 
-policy_chunks.pkl
+Your project repository must include these files.
 
-These last two files are created during the vectorization stage in Jupyter Notebook.
+* `policy_bot_app.py`
+* `requirements.txt`
+* `policy_faiss_index.bin`
+* `policy_chunks.pkl`
 
-3. Install Dependencies
+These last two files are generated earlier during knowledge base creation.
 
-Run this command in your terminal.
+### 3. Install Dependencies
 
+Run this command to install everything.
+
+```bash
 pip install -r requirements.txt
+```
 
-4. Configure the API Key [Secure Method]
+### 4. Configure Gemini API Key
 
-Never upload your API key to GitHub.
+Do not upload your API key to GitHub.
 
-Create a folder named .streamlit in your main project directory
+1. Create a folder named `.streamlit` in your project root
+2. Inside it create a file named `secrets.toml`
+3. Add the following lines
 
-Create a file inside it named secrets.toml
-
-Add the following lines inside that file
-
+```
 GEMINI_API_KEY = "YOUR_ACTUAL_GEMINI_API_KEY"
+```
 
-5. Run the Application
+### 5. Run the Application
 
-Use the command below to start the interface.
+Start the chatbot using this command.
 
+```bash
 streamlit run policy_bot_app.py
+```
+
+Your browser will open the policy advisor interface.
+
+---
+
+## 👩‍💻 Developer Information
+
+**Name:** [Muhammad Hassaan Munir]
 
 
-The browser will automatically open the chat based policy advisor.
