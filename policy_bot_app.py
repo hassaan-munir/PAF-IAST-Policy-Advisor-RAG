@@ -10,7 +10,7 @@ import textwrap
 from google.genai import Client
 
 # --- 2. Configuration & Global Variables ---
-GEMINI_API_KEY = "AIzaSyC8XZqAaxl6GVGqwXYX-Z83Y5N5k_61bXs" 
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"] 
 
 EMBEDDING_MODEL = 'text-embedding-004' 
 VECTOR_STORE_PATH = 'policy_faiss_index.bin'
@@ -166,3 +166,4 @@ if __name__ == "__main__":
     # 4. Main app ko run karna
 
     main()
+
