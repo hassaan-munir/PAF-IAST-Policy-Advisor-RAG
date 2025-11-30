@@ -1,4 +1,12 @@
 # policy_bot_app.py - Final Production Code with Conditional Fallback
+import streamlit as st
+
+# Gemini API key ko Streamlit secrets se le rahe hain
+GEMINI_API_KEY = st.secrets["gemini"]["api_key"]
+
+# Example usage
+st.write("API key successfully loaded!")
+# Ab GEMINI_API_KEY ko apni API calls me use karo
 
 # --- 1. Library Imports ---
 import streamlit as st
@@ -164,3 +172,4 @@ if __name__ == "__main__":
         ST_INITIALIZED = True
         
     main()
+
