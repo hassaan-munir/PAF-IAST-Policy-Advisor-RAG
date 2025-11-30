@@ -17,7 +17,7 @@ import os
 from google.genai import Client
 
 # --- 2. Configuration & Global Variables ---
-GEMINI_API_KEY = "AIzaSyAFNsEDngZL-5bzzRHEidVfQv1vapyEmRE"  # <-- Add your API key here
+#GEMINI_API_KEY = "AIzaSyAFNsEDngZL-5bzzRHEidVfQv1vapyEmRE"  # <-- Add your API key here
 
 EMBEDDING_MODEL = 'text-embedding-004'
 VECTOR_STORE_PATH = 'policy_faiss_index.bin'
@@ -172,4 +172,5 @@ if __name__ == "__main__":
         ST_INITIALIZED = True
         
     main()
+
 
