@@ -10,7 +10,7 @@ import textwrap
 from google.genai import Client
 
 # --- 2. Configuration & Global Variables ---
-GEMINI_API_KEY = "AIzaSyBfafIkfT6rhu_1KOYlkmC5wObt-MawTeM" 
+GEMINI_API_KEY = "AIzaSyC8XZqAaxl6GVGqwXYX-Z83Y5N5k_61bXs" 
 
 EMBEDDING_MODEL = 'text-embedding-004' 
 VECTOR_STORE_PATH = 'policy_faiss_index.bin'
@@ -104,7 +104,7 @@ def ask_policy_bot(query):
          
     query_vector = _get_query_embedding(query)
     if query_vector is None:
-        return "❌ Sawal ko process nahi kiya jaa saka."
+        return "❌ Unable to process the request."
         
     context = retrieve_context(query_vector)
     return generate_response(query, context)
@@ -164,4 +164,5 @@ if __name__ == "__main__":
         ST_INITIALIZED = True
         
     # 4. Main app ko run karna
+
     main()
