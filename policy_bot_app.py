@@ -22,7 +22,20 @@ POLICY_CHUNKS = None
 ST_INITIALIZED = False
 CLIENT = None 
 
+# policy_bot_app.py (Line 25 ke aas paas ka code)
 
+# --- 2. Configuration & Global Variables ---
+# CRITICAL FIX: API Key ko ab Streamlit Secrets se uthaya ja raha hai
+try:
+    # st.secrets ko use karne ke liye, 'import streamlit as st' zaroori hai
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"] 
+except KeyError:
+    # Agar Secrets mein key na mile, toh error dikhao
+    st.error("Error: GEMINI_API_KEY not found in Streamlit Secrets.")
+    st.stop()
+    
+EMBEDDING_MODEL = 'text-embedding-004' 
+# ... (Baaki code same)
 # --- 3. Initial Setup and Loading (Robust Caching) ---
 
 # Caching decorator use kiya gaya hai. Isay 'main' function se pehly define karna zaroori hai.
@@ -166,4 +179,5 @@ if __name__ == "__main__":
     # 4. Main app ko run karna
 
     main()
+
 
