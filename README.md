@@ -73,7 +73,7 @@ Your browser will open the policy advisor interface.
 
 ## 👩‍💻 Developer Information
 
-**Name:** Muhammad Hassaan Munir
-Live Chatbot: [Click Here](https://paf-iast-policy-advisor.streamlit.app)
+**Name:** Muhammad Hassaan Munir<br>
+**Live Chatbot:** [Click Here](https://paf-iast-policy-advisor.streamlit.app)
 
 
