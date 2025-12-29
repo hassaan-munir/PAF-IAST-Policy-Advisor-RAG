@@ -2,7 +2,7 @@
 
 🏛️ **PAF IAST Academic Compliance System, RAG Based Policy Advisor**
 
-This project is a deployment ready Retrieval Augmented Generation chatbot created for the Programming for Artificial Intelligence [COMP 212] final project. It provides instant, accurate and verified answers to student academic policy questions by converting large unstructured university rulebooks into a clean searchable knowledge base.
+This project is a deployment ready Retrieval Augmented Generation chatbot created for the Programming for Artificial Intelligence semester project. It provides instant, accurate and verified answers to student academic policy questions by converting large unstructured university rulebooks into a clean searchable knowledge base.
 
 ---
 
