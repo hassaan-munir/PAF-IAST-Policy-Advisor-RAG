@@ -18,7 +18,6 @@ from google.genai import Client
 
 # --- 2. Configuration & Global Variables ---
 #GEMINI_API_KEY = "AIzaSyAFNsEDngZL-5bzzRHEidVfQv1vapyEmRE"  # <-- Add your API key here
-
 EMBEDDING_MODEL = 'text-embedding-004'
 VECTOR_STORE_PATH = 'policy_faiss_index.bin'
 CHUNKS_PATH = 'policy_chunks.pkl'
@@ -71,9 +70,14 @@ def fallback_general_answer(query):
     """ Generates a short 2-3 sentence general answer from LLM for unknown queries. """
     try:
         fallback_prompt = (
-            "Provide a short 2-3 sentence formal academic-style answer to the student's question. "
-            "Do NOT mention missing information. "
-            f"Question: {query}"
+            "You are an academic advisor at PAF-IAST Haripur. "
+            "Provide a brief academic guidance answer not more than 3 to 4 lines that aligns with "
+            "general university practices at PAF-IAST.bulltes are appreciated. "
+            "Do NOT mention missing policy documents or lack of information.\n\n"
+            "If question is not related to university academics, academic rules, "
+            "student policies, examinations, grading, attendance, or degree requirements?\n"
+            "then simple reply with >> Please ask a question related to academic matters or university policies."
+            f"Student Question: {query}"
         )
         response = CLIENT.models.generate_content(
             model='gemini-2.5-flash',
@@ -172,5 +176,6 @@ if __name__ == "__main__":
         ST_INITIALIZED = True
         
     main()
+
 
 
